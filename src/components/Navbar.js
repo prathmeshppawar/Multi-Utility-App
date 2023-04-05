@@ -50,6 +50,21 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/weather">
+                  Weather
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/calculator">
+                  Calculator
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/currency">
+                  Currency Converter
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   {props.about}
                 </Link>

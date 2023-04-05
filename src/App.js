@@ -5,6 +5,9 @@ import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Weather from "./components/Weather";
+import Calculator from "./components/Calculator";
+import CurrencyConverter from "./components/CurrencyConverter";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -28,7 +31,7 @@ function App() {
       // showAlert("Light mode has been Enabled!",'success')
     } else {
       setMode("dark");
-        setColor("dark");
+      setColor("dark");
       // }
       // showAlert("Dark mode has been Enabled!",'success')
     }
@@ -41,7 +44,7 @@ function App() {
     } else {
       setMode2("danger");
       // if (mode === "dark") {
-        setColor("danger");
+      setColor("danger");
       // }
       // showAlert("Danger mode has been Enabled!",'success')
     }
@@ -59,22 +62,68 @@ function App() {
           toggleMode2={toggleMode2}
           toggleMode={toggleMode}
         />
-        <Alert alert={alert} />
+        {window.location.pathname === "/" ||
+        window.location.pathname === "/about" ? (
+          <Alert alert={alert} />
+        ) : (
+          <></>
+        )}
         <Routes>
-          <Route path="/about"
-          element={<About 
-            showAlert={showAlert}
-            mode={mode}
-            mode2={mode2}
-            color={color}/>}
+          <Route
+            path="/about"
+            element={
+              <About
+                showAlert={showAlert}
+                mode={mode}
+                mode2={mode2}
+                color={color}
+              />
+            }
           />
-          < Route path="/" element={<TextForm
-              showAlert={showAlert}
-              mode={mode}
-              mode2={mode2}
-              color={color}
-              heading="Enter The Text to Analyze"
-            />}
+          <Route
+            path="/weather"
+            element={
+              <Weather
+                showAlert={showAlert}
+                mode={mode}
+                mode2={mode2}
+                color={color}
+              />
+            }
+          />
+          <Route
+            path="/calculator"
+            element={
+              <Calculator
+                showAlert={showAlert}
+                mode={mode}
+                mode2={mode2}
+                color={color}
+              />
+            }
+          />
+          <Route
+            path="/currency"
+            element={
+              <CurrencyConverter
+                showAlert={showAlert}
+                mode={mode}
+                mode2={mode2}
+                color={color}
+              />
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <TextForm
+                showAlert={showAlert}
+                mode={mode}
+                mode2={mode2}
+                color={color}
+                heading="Enter The Text to Analyze"
+              />
+            }
           />
         </Routes>
       </Router>
