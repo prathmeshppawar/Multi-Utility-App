@@ -65,6 +65,11 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/currency">
+                  Dictionary
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   {props.about}
                 </Link>

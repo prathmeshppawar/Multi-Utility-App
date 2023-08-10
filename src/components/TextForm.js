@@ -149,14 +149,14 @@ export default function TextForm(props) {
           <p>
             {handleCount()} words and {text.length} letters.
           </p>
-          <p>
+          {/* <p>
             {
               text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
             words and {text.length} letters.
-          </p>
+          </p> */}
         </div>
       </div>
     </>
